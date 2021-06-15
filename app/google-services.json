@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "949694351251",
+    "project_id": "latihanfirebase-1-addab",
+    "storage_bucket": "latihanfirebase-1-addab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949694351251:android:ce50d6a1fb976375e84a66",
+        "android_client_info": {
+          "package_name": "com.antok.latihanfirebase_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949694351251-ah7f0jfqh6imuns351lhbnr45refua5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMSZyFPvJz9DGajvLUeoC5kXVl9bkCKoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949694351251-ah7f0jfqh6imuns351lhbnr45refua5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

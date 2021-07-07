@@ -11,6 +11,14 @@
         android:gravity="center"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Form Pengajuan Beasiswa Kampus STIMATA"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
         <EditText
             android:id="@+id/nim"
             android:layout_width="match_parent"
@@ -35,6 +43,34 @@
             android:hint="Jurusan"
             android:inputType="textPersonName" />
 
+        <EditText
+            android:id="@+id/JenisKelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Jenis Kelamin"
+            android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/Semester"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Semester"
+            android:inputType="number" />
+        <EditText
+            android:id="@+id/IPK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="IPK"
+            android:inputType="textPersonName" />
+        <EditText
+            android:id="@+id/JenisBeasiswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Jenis Beasiswa"
+            android:inputType="textPersonName" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

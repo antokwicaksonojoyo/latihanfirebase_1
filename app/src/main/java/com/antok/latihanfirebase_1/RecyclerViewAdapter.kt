@@ -24,12 +24,20 @@ class RecyclerViewAdapter( private val listMahasiswa: ArrayList<data_mahasiswa>,
         val NIM: TextView
         val Nama: TextView
         val Jurusan: TextView
+        val JenisKelamin : TextView
+        val Semester : TextView
+        val IPK : TextView
+        val JenisBeasiswa : TextView
         val ListItem: LinearLayout
 
         init {//Menginisialisasi View yang terpasang pada layout RecyclerView kita
             NIM = itemView.findViewById(R.id.nimx)
             Nama = itemView.findViewById(R.id.namax)
             Jurusan = itemView.findViewById(R.id.jurusanx)
+            JenisKelamin = itemView.findViewById(R.id.jeniskelaminx)
+            Semester = itemView.findViewById(R.id.semesterx)
+            IPK = itemView.findViewById(R.id.ipkx)
+            JenisBeasiswa = itemView.findViewById(R.id.jenisbeasiswax)
             ListItem = itemView.findViewById(R.id.list_item)
         }
     }
@@ -46,11 +54,19 @@ class RecyclerViewAdapter( private val listMahasiswa: ArrayList<data_mahasiswa>,
         val NIM: String? = listMahasiswa.get(position).nim
         val Nama: String? = listMahasiswa.get(position).nama
         val Jurusan: String? = listMahasiswa.get(position).jurusan
+        val JenisKelamin: String? = listMahasiswa.get(position).jk
+        val Semester: String? = listMahasiswa.get(position).semester
+        val IPK: String? = listMahasiswa.get(position).ipk
+        val JenisBeasiswa: String? = listMahasiswa.get(position).jenisbeasiswa
 
         //Memasukan Nilai/Value kedalam View (TextView: NIM, Nama, Jurusan)
         holder.NIM.text = "NIM: $NIM"
         holder.Nama.text = "Nama: $Nama"
         holder.Jurusan.text = "Jurusan: $Jurusan"
+        holder.JenisKelamin.text = "JenisKelamin: $JenisKelamin"
+        holder.Semester.text = "Semester: $Semester"
+        holder.IPK.text = "IPK: $IPK"
+        holder.JenisBeasiswa.text = "JenisBeasiswa: $JenisBeasiswa"
         holder.ListItem.setOnLongClickListener(object : View.OnLongClickListener {
             override fun onLongClick(v: View?): Boolean {
 //Kodingan untuk fungsi Edit dan Delete, yang dibahas pada Tutorial Berikutnya.
@@ -65,6 +81,10 @@ class RecyclerViewAdapter( private val listMahasiswa: ArrayList<data_mahasiswa>,
                                 bundle.putString("dataNIM", listMahasiswa[position].nim)
                                 bundle.putString("dataNama", listMahasiswa[position].nama)
                                 bundle.putString("dataJurusan", listMahasiswa[position].jurusan)
+                                bundle.putString("dataJenisKelamin", listMahasiswa[position].jk)
+                                bundle.putString("dataSemester", listMahasiswa[position].semester)
+                                bundle.putString("dataIPK", listMahasiswa[position].ipk)
+                                bundle.putString("dataJenisBeasiswa", listMahasiswa[position].jenisbeasiswa)
                                 bundle.putString("getPrimaryKey", listMahasiswa[position].key)
                                 val intent = Intent(view.context, UpdateData::class.java)
                                 intent.putExtras(bundle)

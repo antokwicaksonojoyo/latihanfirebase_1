@@ -19,6 +19,10 @@ class UpdateData : AppCompatActivity() {
     private var cekNIM: String? = null
     private var cekNama: String? = null
     private var cekJurusan: String? = null
+    private var cekJK: String? = null
+    private var cekIPK: String? = null
+    private var cekSemester: String? = null
+    private var cekJenisBeasiswa: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_data)
@@ -35,9 +39,13 @@ class UpdateData : AppCompatActivity() {
                 cekNIM = new_nim.getText().toString()
                 cekNama = new_nama.getText().toString()
                 cekJurusan = new_jurusan.getText().toString()
+                cekJK = new_jeniskelamin.getText().toString()
+                cekIPK = new_IPK.getText().toString()
+                cekSemester = new_semester.getText().toString()
+                cekJenisBeasiswa = new_jenisbeasiswa.getText().toString()
 
                 //Mengecek agar tidak ada data yang kosong, saat proses update
-                if (isEmpty(cekNIM!!) || isEmpty(cekNama!!) || isEmpty(cekJurusan!!)) {
+                if (isEmpty(cekNIM!!) || isEmpty(cekNama!!) || isEmpty(cekJurusan!!) || isEmpty(cekJK!!)  || isEmpty(cekIPK!!) || isEmpty(cekSemester!!) || isEmpty(cekJenisBeasiswa!!) ) {
                     Toast.makeText(
                             this@UpdateData,
                             "Data tidak boleh ada yang kosong",
@@ -50,6 +58,9 @@ class UpdateData : AppCompatActivity() {
                     setMahasiswa.nim = new_nim.getText().toString()
                     setMahasiswa.nama = new_nama.getText().toString()
                     setMahasiswa.jurusan = new_jurusan.getText().toString()
+                    setMahasiswa.jk = new_jeniskelamin.getText().toString()
+                    setMahasiswa.semester = new_semester.getText().toString()
+                    setMahasiswa.jenisbeasiswa = new_jenisbeasiswa.getText().toString()
                     updateMahasiswa(setMahasiswa)
                 }
             }
@@ -68,9 +79,17 @@ class UpdateData : AppCompatActivity() {
             val getNIM = intent.extras!!.getString("dataNIM")
             val getNama = intent.extras!!.getString("dataNama")
             val getJurusan = intent.extras!!.getString("dataJurusan")
+            val getJK = intent.extras!!.getString("dataJK")
+            val getSemester = intent.extras!!.getString("dataSemester")
+            val getIPK = intent.extras!!.getString("dataIPK")
+            val getJenisBeasiswa = intent.extras!!.getString("dataJenisBeasiswa")
             new_nim!!.setText(getNIM)
             new_nama!!.setText(getNama)
             new_jurusan!!.setText(getJurusan)
+            new_jeniskelamin!!.setText(getJK)
+            new_semester!!.setText(getSemester)
+            new_IPK!!.setText(getIPK)
+            new_jenisbeasiswa!!.setText(getJenisBeasiswa)
         }
 
     //Proses Update data yang sudah ditentukan
@@ -86,6 +105,10 @@ class UpdateData : AppCompatActivity() {
                     new_nim!!.setText("")
                     new_nama!!.setText("")
                     new_jurusan!!.setText("")
+                    new_jeniskelamin!!.setText("")
+                    new_semester!!.setText("")
+                    new_IPK!!.setText("")
+                    new_jenisbeasiswa.setText("")
                     Toast.makeText(this@UpdateData, "Data Berhasil diubah", Toast.LENGTH_SHORT).show()
                     intent = Intent(applicationContext, MyListData::class.java)
                     startActivity(intent)
